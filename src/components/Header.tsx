@@ -1,7 +1,11 @@
 import {useNavigate} from "react-router-dom";
 import './Header.css'
+import React from "react";
 
-export default function Header () {
+export default function Header({page, setPage}: {
+    page: number,
+    setPage: React.Dispatch<React.SetStateAction<number>>
+}) {
     const navigate = useNavigate()
     return (
         <nav>
@@ -13,6 +17,10 @@ export default function Header () {
             <button onClick={() => {
                 navigate("/characters")
             }}>Characters
+            </button>
+            <button onClick={() => {
+                setPage(page + 1)
+            }}>next
             </button>
         </nav>
     )

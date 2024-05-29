@@ -1,8 +1,8 @@
 import {useState} from "react";
-import {characters} from "../Characters.ts";
 import CharacterGallery from "./CharacterGallery.tsx";
+import {Character} from "../types/RickAndMortyCharacter.ts";
 
-export default function CharacterSearch () {
+export default function CharacterSearch ({characters}:{characters: Character[]}) {
     const [searchText, setSearchText] = useState("");
 
     const filteredCharacters = characters

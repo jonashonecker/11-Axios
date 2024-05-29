@@ -1,7 +1,7 @@
 import {useParams} from "react-router-dom";
-import {characters} from "../Characters.ts";
+import {Character} from "../types/RickAndMortyCharacter.ts";
 
-export default function CharacterDetail() {
+export default function CharacterDetail({characters}:{characters: Character[]}) {
     const {id} = useParams()
     const character = characters.find((char) => char.id === Number(id))
 
